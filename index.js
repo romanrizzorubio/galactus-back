@@ -55,6 +55,9 @@ app.post('/maquina', (req, res) => {
   const {maquina} = req.body;
 
   data.maquina += maquina;
+  if (data.maquina < 0) {
+    data.maquina = 0;
+  }
 
   res.send(data)
 })
